@@ -1,11 +1,10 @@
-import {parseDaysInfo} from "./Calendar";
-import {DayInfo, MonthInfo} from "../typings";
+import { DayInfo } from '../typings';
+
+import { parseDaysInfo } from './Calendar';
 
 describe('parseDaysInfo', () => {
     it('empty dates return empty object', () => {
-        expect(
-            parseDaysInfo()
-        ).toEqual({});
+        expect(parseDaysInfo()).toEqual({});
     });
 
     it('wrong dates info return empty object', () => {
@@ -20,10 +19,7 @@ describe('parseDaysInfo', () => {
             }
         ];
 
-
-        expect(
-            parseDaysInfo(info)
-        ).toEqual({});
+        expect(parseDaysInfo(info)).toEqual({});
     });
 
     it('someone wrong date erases from result', () => {
@@ -38,10 +34,23 @@ describe('parseDaysInfo', () => {
             }
         ];
 
+        expect(parseDaysInfo(info)).toEqual({
+            '10.12.2015': '#ffffff'
+        });
+    });
 
-        expect(
-            parseDaysInfo(info)
-        ).toEqual({
+    it('someone empty color erases from result', () => {
+        const info: Array<DayInfo> = [
+            {
+                date: '11.12.2015'
+            },
+            {
+                date: '10.12.2015',
+                color: '#ffffff'
+            }
+        ];
+
+        expect(parseDaysInfo(info)).toEqual({
             '10.12.2015': '#ffffff'
         });
     });
@@ -50,24 +59,6 @@ describe('parseDaysInfo', () => {
         const info: Array<DayInfo> = [
             {
                 date: '11.12.2015',
-            },
-            {
-                date: '10.12.2015',
-                color: '#ffffff'
-            }
-        ];
-
-        expect(
-            parseDaysInfo(info)
-        ).toEqual({
-            '10.12.2015': '#ffffff'
-        });
-    });
-
-    it('someone empty color erases from result', () => {
-        const info: Array<DayInfo> = [
-            {
-                date: '11.12.2015',
                 color: '#ffffff'
             },
             {
@@ -76,9 +67,7 @@ describe('parseDaysInfo', () => {
             }
         ];
 
-        expect(
-            parseDaysInfo(info)
-        ).toEqual({
+        expect(parseDaysInfo(info)).toEqual({
             '10.12.2015': '#ffffff',
             '11.12.2015': '#ffffff'
         });

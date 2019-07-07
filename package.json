@@ -8,7 +8,6 @@
     "@types/node": "12.0.12",
     "@types/react": "16.8.23",
     "@types/react-dom": "16.8.4",
-    "husky": "^3.0.0",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-scripts": "3.0.1",
@@ -22,6 +21,11 @@
   },
   "eslintConfig": {
     "extends": "react-app"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
   },
   "browserslist": {
     "production": [
@@ -41,15 +45,24 @@
       "tslint --fix --exclude *.css",
       "git add"
     ],
-    "tests/**/*.ts": [
-      "prettier --parser typescript --write",
-      "tslint --project tests/tsconfig.json --fix",
-      "git add"
-    ],
-    "src/components/**/*.css": [
+    "src/**/*.css": [
       "prettier --print-width=160 --write",
       "stylelint --fix",
       "git add"
     ]
+  },
+  "devDependencies": {
+    "husky": "^3.0.0",
+    "lint-staged": "^9.1.0",
+    "prettier": "^1.18.2",
+    "stylelint": "^10.1.0",
+    "stylelint-config-prettier": "^5.2.0",
+    "stylelint-config-standard": "^18.3.0",
+    "stylelint-declaration-use-variable": "^1.7.0",
+    "stylelint-order": "^3.0.0",
+    "tslint": "^5.18.0",
+    "tslint-config-prettier": "^1.18.0",
+    "tslint-loader": "^3.5.4",
+    "tslint-react": "^4.0.0"
   }
 }

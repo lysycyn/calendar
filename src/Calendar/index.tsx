@@ -1,6 +1,7 @@
 import React from 'react';
-import {DayInfo, DaysColorsInfo, MonthInfo} from "../typings";
-import {parseCurrentMonthInfo, parseDaysInfo} from "../helpers/Calendar";
+
+import { parseCurrentMonthInfo, parseDaysInfo } from '../helpers/Calendar';
+import { DayInfo, DaysColorsInfo, MonthInfo } from '../typings';
 
 export interface CalendarProps {
     currentMonth?: string;
@@ -15,25 +16,24 @@ export interface CalendarState {
     activeDay?: number;
 }
 
-export default class Calendar extends React.Component<CalendarProps, CalendarState> {
+export default class Calendar extends React.Component<
+    CalendarProps,
+    CalendarState
+> {
     constructor(props: CalendarProps) {
         super(props);
 
-        const {month, year} = parseCurrentMonthInfo(props.currentMonth);
-        const datesColors = parseDaysInfo(props.dates)
+        const { month, year } = parseCurrentMonthInfo(props.currentMonth);
+        const datesColors = parseDaysInfo(props.dates);
 
         this.state = {
             currentMonth: month,
             currentYear: year,
-            datesColors,
+            datesColors
         };
     }
 
-    render() {
-        return (
-            <div className={'calendar'}>
-
-            </div>
-        );
+    render(): React.ReactNode {
+        return <div className={'calendar'} />;
     }
 }
