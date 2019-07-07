@@ -1,0 +1,16 @@
+.week {
+    display: flex;
+    width: 100%;
+}
+
+.week__day {
+    align-items: center;
+    border: 1px solid black;
+    display: flex;
+    flex-grow: 1;
+    font-size: 13px;
+    font-weight: 700;
+    height: 35px;
+    justify-content: center;
+    text-transform: uppercase;
+}

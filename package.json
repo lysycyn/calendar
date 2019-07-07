@@ -4,10 +4,12 @@
   "private": true,
   "author": "lysycyn <lysycyn@gmail.com>",
   "dependencies": {
+    "@types/classnames": "^2.2.9",
     "@types/jest": "24.0.15",
     "@types/node": "12.0.12",
     "@types/react": "16.8.23",
     "@types/react-dom": "16.8.4",
+    "classnames": "^2.2.6",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-scripts": "3.0.1",
@@ -50,6 +52,24 @@
       "stylelint --fix",
       "git add"
     ]
+  },
+  "stylelint": {
+    "plugins": [
+      "stylelint-order",
+      "stylelint-declaration-use-variable"
+    ],
+    "extends": [
+      "stylelint-config-standard",
+      "stylelint-config-prettier"
+    ],
+    "rules": {
+      "indentation": 4,
+      "order/order": [
+        "custom-properties",
+        "declarations"
+      ],
+      "order/properties-alphabetical-order": true
+    }
   },
   "devDependencies": {
     "husky": "^3.0.0",

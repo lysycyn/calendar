@@ -1,5 +1,5 @@
 import {parseCurrentMonthInfo} from "./Calendar";
-import {MonthInfo} from "../typings";
+import {MonthInfo} from "../../typings";
 
 describe('parseCurrentMonthInfo', () => {
     const date = new Date(Date.now());

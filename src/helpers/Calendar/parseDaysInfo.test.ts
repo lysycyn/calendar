@@ -1,4 +1,4 @@
-import { DayInfo } from '../typings';
+import { DayInfo } from '../../typings';
 
 import { parseDaysInfo } from './Calendar';
 

@@ -1,0 +1,54 @@
+.header {
+    align-items: center;
+    display: flex;
+    font-size: 15px;
+    font-weight: 700;
+    height: 50px;
+    justify-content: center;
+    position: relative;
+    text-transform: uppercase;
+    width: 100%;
+}
+
+.header__btn {
+    align-items: center;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    height: 50px;
+    justify-content: center;
+    position: absolute;
+    width: 50px;
+}
+
+.header__btn:focus {
+    outline: none;
+}
+
+.header__btn::before {
+    border-bottom: 2px solid black;
+    border-right: 2px solid black;
+    content: '';
+    display: block;
+    height: 20px;
+    width: 20px;
+}
+
+.header__btn_prev {
+    left: 0;
+    top: 0;
+}
+
+.header__btn_next {
+    right: 0;
+    top: 0;
+}
+
+.header__btn_prev::before {
+    transform: rotate(135deg);
+}
+
+.header__btn_next::before {
+    transform: rotate(-45deg);
+}

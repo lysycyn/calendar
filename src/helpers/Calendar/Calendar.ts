@@ -1,4 +1,4 @@
-import {DayInfo, DaysColorsInfo, MonthInfo} from "../typings";
+import {DayInfo, DaysColorsInfo, MonthInfo} from "../../typings";
 
 export const parseCurrentMonthInfo = (info?: string) : MonthInfo  => {
     const currentDay = new Date(Date.now());
