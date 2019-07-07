@@ -1,12 +1,14 @@
 {
-  "name": "my-app",
+  "name": "calendar",
   "version": "0.1.0",
   "private": true,
+  "author": "lysycyn <lysycyn@gmail.com>",
   "dependencies": {
     "@types/jest": "24.0.15",
     "@types/node": "12.0.12",
     "@types/react": "16.8.23",
     "@types/react-dom": "16.8.4",
+    "husky": "^3.0.0",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-scripts": "3.0.1",
@@ -31,6 +33,23 @@
       "last 1 chrome version",
       "last 1 firefox version",
       "last 1 safari version"
+    ]
+  },
+  "lint-staged": {
+    "src/**/*.{ts,tsx,js,jsx}": [
+      "prettier --parser typescript --write",
+      "tslint --fix --exclude *.css",
+      "git add"
+    ],
+    "tests/**/*.ts": [
+      "prettier --parser typescript --write",
+      "tslint --project tests/tsconfig.json --fix",
+      "git add"
+    ],
+    "src/components/**/*.css": [
+      "prettier --print-width=160 --write",
+      "stylelint --fix",
+      "git add"
     ]
   }
 }
