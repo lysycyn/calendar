@@ -1,5 +1,6 @@
 .header {
     align-items: center;
+    border: 1px solid black;
     display: flex;
     font-size: 15px;
     font-weight: 700;

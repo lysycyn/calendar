@@ -9,3 +9,8 @@ export interface MonthInfo {
 }
 
 export type DaysColorsInfo = Record<string, string>;
+
+export enum MonthType {
+    PREV_MONTH = 'PREV_MONTH',
+    NEXT_MONTH = 'NEXT_MONTH'
+}
