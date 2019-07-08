@@ -1,11 +1,13 @@
-###Календарь
+Календарь
 
-    ##For dev
-    # npm install
-    # npm start
+## Для запуска
 
-    ##For test
-    # npm run test
+    npm install
+    npm start
+
+## Для тестов
+
+    npm run test
 
 - CreateReactApp + typescript
 - принес свой конфиг tslint + stage для precommit-хуков
